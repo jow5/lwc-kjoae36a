@@ -1,0 +1,14 @@
+<template>
+  <div oncueselect={handleCueSelect}>
+    <template for:each={cues} for:item='cue'>
+      <lightning-tile label={cue.summary} key={cue.Id}>
+        <template if:true={isedit}>
+          <c-cue-edit cue={cue}></c-cue-edit>
+        </template>
+        <template if:false={isedit}>
+          <c-cue-display cue={cue}></c-cue-display>
+        </template>
+      </lightning-tile>
+    </template>
+  </div>
+</template>

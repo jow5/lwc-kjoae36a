@@ -1,0 +1,38 @@
+<template>
+	<c-lds-page-header title="UsageForce Mockup" object="Cue Sheet">
+		<div class="c-container" style="width: 100%;">
+			<lightning-layout multiple-rows="true">
+				<lightning-layout-item padding="around-small" size="12">
+					<div class="page-section page-header">
+						<h3>Cue Sheet details here...</h3>
+					</div>
+				</lightning-layout-item>
+				<lightning-layout-item padding="around-small" size="12">
+					<lightning-layout>
+						<lightning-layout-item padding="around-small" size="6">
+							<div oncueselect={handleCueSelect}>
+								<c-cue-list cues={cuelist}></c-cue-list>
+							</div>
+						</lightning-layout-item>
+						<lightning-layout-item padding="around-small" size="6">
+							<lightning-card title="Sequence Detail">
+								<template if:true={current}>
+									<c-cue-edit cue={current}></c-cue-edit>
+								</template>
+							</lightning-card>
+							<lightning-card title="Song Entry/Picker"></lightning-card>
+							<lightning-card title="CPA Manager">
+								<c-cpa-manager cue={current}></c-cpa-manager>
+							</lightning-card>
+						</lightning-layout-item>
+					</lightning-layout>
+				</lightning-layout-item>
+				<lightning-layout-item flexibility="auto" padding="around-small" size="12">
+					<div class="page-footer page-section">
+						<h2>Footer here...</h2>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+		</div>
+	</c-lds-page-header>
+</template>
